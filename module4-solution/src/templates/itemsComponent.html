@@ -1,0 +1,14 @@
+<div class="container">
+  <br>
+  <h3 class="text-center">Category selected: {{ $ctrl.items.category.name }}</h3>
+  <a ui-sref="categories" class="btn btn-primary">&#60; Back to Categories</a>
+  <br><br>
+  <div class="list-group">
+    <a ui-sref="#"
+    ng-repeat="item in $ctrl.items.menu_items"
+    class="list-group-item">
+    {{item.name}}
+    </a>
+  </div>
+
+</div>
