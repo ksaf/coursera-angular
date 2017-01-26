@@ -7,7 +7,11 @@
       <input type="text" name="firstname" id="firstname" class="form-control" style="color: black"
         ng-model="reg.user.firstname"
         required
+        minlength="4"
         >
+        <span ng-if="(regForm.firstname.$error.minlength || regForm.firstname.$error.required) && regForm.firstname.$touched">
+          First name must be at least 4 characters long
+        </span>
     </div>
 
     <div class="form-group">
@@ -16,7 +20,11 @@
         style="color: black"
         ng-model="reg.user.lastname"
         required
+        minlength="4"
         >
+        <span ng-if="(regForm.lastname.$error.minlength || regForm.lastname.$error.required) && regForm.lastname.$touched">
+          Last name must be at least 4 characters long
+        </span>
     </div>
 
     <div class="form-group">
@@ -25,6 +33,9 @@
         style="color: black"
         ng-model="reg.user.email"
         required>
+        <span ng-if="regForm.email.$invalid && regForm.email.$touched">
+          Must be a valid email address: handle@domain format
+        </span>
     </div>
 
     <div class="form-group">
@@ -32,7 +43,11 @@
       <input type="text" name="phone" id="phone" class="form-control"
         style="color: black"
         ng-model="reg.user.phone"
-        required>
+        required
+        pattern="(\d{3})-(\d{3})-(\d{4})">
+        <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">
+          Phone must be in the format ###-###-####.
+        </span>
     </div>
 
     <div class="form-group">
