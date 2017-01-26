@@ -1,0 +1,18 @@
+<div class="container" ng-if="info.favItem !== false">
+  <h2>Hello, {{ info.infor.firstname }}!</h2>
+  <h2>The information you have registered is: </h2>
+  <h3>First name: {{ info.infor.firstname }}</h3>
+  <h3>Last name: {{ info.infor.lastname }}</h3>
+  <h3>Phone number: {{ info.infor.phone }}</h3>
+  <h3>Email adress: {{ info.infor.email }}</h3>
+
+  <h3>Favorite menu item: {{ info.favItem.name }}</h3>
+  <h4></h4>
+  <img class="img-responsive" width="250" height="150" ng-src="{{info.basePath}}/images/{{info.favItem.short_name}}.jpg" alt="{{info.favItem.name}}">
+  <h4>{{ info.favItem.description }}</h4>
+
+</div>
+
+<div class="container" ng-if="info.favItem === false">
+  <h3>Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a></h3>
+</div>

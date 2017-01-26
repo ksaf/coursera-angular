@@ -1,0 +1,57 @@
+<div class="container">
+  <h3>Sign up for the newsletter!</h3>
+  <br>
+  <form name="regForm" novalidate>
+    <div class="form-group">
+      <label for="firstname">Firstname:  </label>
+      <input type="text" name="firstname" id="firstname" class="form-control" style="color: black"
+        ng-model="reg.user.firstname"
+        required
+        >
+    </div>
+
+    <div class="form-group">
+      <label for="lastname">Lastname:   </label>
+      <input type="text" name="lastname" id="lastname" class="form-control"
+        style="color: black"
+        ng-model="reg.user.lastname"
+        required
+        >
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email Adress:  </label>
+      <input type="email" name="email" id="email" class="form-control"
+        style="color: black"
+        ng-model="reg.user.email"
+        required>
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Phone number:  </label>
+      <input type="text" name="phone" id="phone" class="form-control"
+        style="color: black"
+        ng-model="reg.user.phone"
+        required>
+    </div>
+
+    <div class="form-group">
+      <label for="dish">Your favorite dish's menu number:  </label>
+      <input type="text" name="menu_number" id="dish" class="form-control"
+        style="color: black"
+        ng-model="reg.user.menu_number"
+        required>
+        <div class="alert alert-warning" ng-if="reg.menuNumberNotValid">
+          <strong>Error!</strong> No such menu number exists.
+        </div>
+    </div>
+    <br>
+
+    <button ng-disabled="regForm.$invalid"
+            ng-click="reg.submit(reg.user)"
+            class="btn btn-default">Submit</button>
+    <br>
+    <h3 ng-if="reg.informationHasBeenSaved">Your information has been saved!</h3>
+
+  </form>
+</div>
